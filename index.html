@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home page</title>
-        <style>
-            body {
-              background-image: url('feedback.jpg');
-              background-repeat: no-repeat;
-              background-position: right top;
-              margin-right: 40%;
-            }
-        </style>
-    </head>
 
-    
-    <body>
-            <h1>Spend some time and give your response</h1>
-            
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="signup.html">Register</a></li>
-                    <li><a href="#about">About</a></li>
-                  </ul>
-            
-    </body>
+<head>
+    <title>index</title>
+    <style>
+        .image {
+            float: right;
+            width: 37%;
+            margin-right: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="mystyle.css">
+</head>
+
+
+<body>
+    <div>
+
+        <header>
+            <div class="topnav">
+                <a class="active" href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Register</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="logout.html">Logout</a>
+            </div>
+        </header>
+    </div>
+    <h1>Spend some time and give your response</h1>
+    <div class="image">
+        <img src="feedback.jpg" alt="feedback" style="width:100%">
+    </div>
+</body>
+
 </html>
