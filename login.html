@@ -2,8 +2,10 @@
 <html>
 
 <head>
-    <link type="text/css" rel="stylesheet" href="mystyle.css">
+    <link type="text/css" rel="stylesheet" href="css/mystyle.css">
+    <script src="js/login.js"></script>
     <title>login</title>
+
 </head>
 
 <body>
@@ -19,8 +21,8 @@
         </div>
     </header>
     <h1>Login</h1>
-    <form action="#" method="get" id="form1">
-        <table>
+    <form action="feedback.html" method="get" id="form1">
+        <table id="feedback">
             <tr>
                 <td><label for="person">Log in as  </label></td>
                 <td><select name="person" id="person">
@@ -30,14 +32,27 @@
                     </select></td>
                 <tr>
                     <td> Username </td>
-                    <td> <input type="username" title="username" placeholder="Username" required autofocus></td>
+                    <td> <input type="username" title="username" placeholder="Username" id="username" required autofocus></td>
                 </tr>
                 <tr>
                     <td> Password </td>
-                    <td><input type="password" title="password" placeholder="at least 8 character " required></td>
+                    <td><input type="password" title="password" placeholder="at least 8 character " min="8" id="password" required></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Sign in"></td>
+                    <td><input type="submit" value="submit" id="submit" onclick="validate()"></td>
+                    <script>
+                        var attempt = 3; // Variable to count number of attempts.
+                        // Below function Executes on click of login button.
+                        function validate() {
+                            var username = document.getElementById("username").value;
+                            var password = document.getElementById("password").value;
+                            if (username == "admin" && password == "admin") {
+                                alert("Login successfully");
+                                window.location = "feedback.html"; // Redirecting to other page.
+                                return false;
+                            }
+                        }
+                    </script>
                     <td><a href="signup.html">Register</a></td>
                 </tr>
     </form>
