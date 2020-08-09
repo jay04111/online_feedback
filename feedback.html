@@ -3,7 +3,14 @@
 
 <head>
     <title>Feedback</title>
-    <link type="text/css" rel="stylesheet" href="mystyle.css">
+    <link type="text/css" rel="stylesheet" href="css/mystyle.css">
+    <script>
+        function feedback_response() {
+
+            document.getElementsByClassName('prof_name').innerHTML = "professor name :" + document.feedback_from.feedback.sub.sub_name.value;
+
+        }
+    </script>
 </head>
 
 <body>
@@ -18,7 +25,7 @@
             <a href="logout.html">Logout</a>
         </div>
     </header><br>
-    <form action="Repeat.html" method="GET">
+    <form name="feedback_from">
 
         <table border="2px" align="center" id="feedback">
 
@@ -31,13 +38,13 @@
             <tbody>
                 <tr>
                     <td colspan="2" align="center">Prof. Name:</td>
-                    <td colspan="2" align="center"><input type="text" name="name" /></td>
+                    <td colspan="2" align="center"><input type="text" name="name" id="prof_name" /></td>
 
                 </tr>
 
                 <tr>
                     <td colspan="2" align="center">Subject Name:</td>
-                    <td colspan="2" align="center"><input type="text" name="name" /></td>
+                    <td colspan="2" align="center"><input type="text" name="sub" id="sub_name" /></td>
 
                 </tr>
                 <tr>
@@ -51,9 +58,9 @@
                     <td>
                         Teaching skill
                     </td>
-                    <td align="center"><input type="radio" name="Teaching skill"></td>
-                    <td align="center"><input type="radio" name="Teaching skill"></td>
-                    <td align="center"><input type="radio" name="Teaching skill"></td>
+                    <td align="center"><input type="radio" name="Teaching skill" value="Good"></td>
+                    <td align="center"><input type="radio" name="Teaching skill" value="Fair"></td>
+                    <td align="center"><input type="radio" name="Teaching skill" value="Poor"></td>
                 </tr>
                 <tr>
 
@@ -61,9 +68,9 @@
                         Sincerity
                     </td>
                     </td>
-                    <td align="center"><input type="radio" name="Sincerity"></td>
-                    <td align="center"><input type="radio" name="Sincerity"></td>
-                    <td align="center"><input type="radio" name="Sincerity"></td>
+                    <td align="center"><input type="radio" name="Sincerity" value="Good"></td>
+                    <td align="center"><input type="radio" name="Sincerity" value="Fair"></td>
+                    <td align="center"><input type="radio" name="Sincerity" value="Poor"></td>
                 </tr>
                 <tr>
 
@@ -71,9 +78,9 @@
                         Interaction
                     </td>
                     </td>
-                    <td align="center"><input type="radio" name="Interaction"></td>
-                    <td align="center"><input type="radio" name="Interaction"></td>
-                    <td align="center"><input type="radio" name="Interaction"></td>
+                    <td align="center"><input type="radio" name="Interaction" value="Good"></td>
+                    <td align="center"><input type="radio" name="Interaction" value="Fair"></td>
+                    <td align="center"><input type="radio" name="Interaction" value="Poor"></td>
                 </tr>
                 <tr>
 
@@ -81,9 +88,9 @@
                         class maintenance
                     </td>
                     </td>
-                    <td align="center"><input type="radio" name="class maintenance"></td>
-                    <td align="center"><input type="radio" name="class maintenance"></td>
-                    <td align="center"><input type="radio" name="class maintenance"></td>
+                    <td align="center"><input type="radio" name="class maintenance" value="Good"></td>
+                    <td align="center"><input type="radio" name="class maintenance" value="Fair"></td>
+                    <td align="center"><input type="radio" name="class maintenance" value="Poor"></td>
                 </tr>
                 <tr>
 
@@ -91,9 +98,9 @@
                         subject involement
                     </td>
                     </td>
-                    <td align="center"><input type="radio" name="subject involement"></td>
-                    <td align="center"><input type="radio" name="subject involement"></td>
-                    <td align="center"><input type="radio" name="subject involement"></td>
+                    <td align="center"><input type="radio" name="subject involement" value="Good"></td>
+                    <td align="center"><input type="radio" name="subject involement" value="Fair"></td>
+                    <td align="center"><input type="radio" name="subject involement" value="Poor"></td>
                 </tr>
                 <tr>
 
@@ -101,20 +108,32 @@
                         knowledge
                     </td>
                     </td>
-                    <td align="center"><input type="radio" name="knowledge"></td>
-                    <td align="center"><input type="radio" name="knowledge"></td>
-                    <td align="center"><input type="radio" name="knowledge"></td>
+                    <td align="center"><input type="radio" name="knowledge" value="Good"></td>
+                    <td align="center"><input type="radio" name="knowledge" value="Fair"></td>
+                    <td align="center"><input type="radio" name="knowledge" value="Poor"></td>
                 </tr>
 
                 <thead>
                     <tr>
-                        <th colspan="4" align="center"><input type="submit" value="submit" id=btn_i/></th>
+                        <th colspan="4" align="center"><input type="submit" value="submit" id=btn_i onclick='feedback_response(); return false'></th>
 
                     </tr>
                 </thead>
             </tbody>
         </table>
     </form>
+
+    <div class="feedback">
+        <p class="prof_name"></p><br>
+        <p class="subject"></p><br><br>
+        <p class="teaching_skill"></p><br>
+        <p class="sincerity"></p><br>
+        <p class="interaction"></p><br>
+        <p class="class_maintenance"></p><br>
+        <p class="subject_involement"></p><br>
+        <p class="knowledge"></p><br>
+    </div>
+
 
 </body>
 
