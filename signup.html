@@ -21,7 +21,7 @@
     </header>
     <h1>Register</h1>
 
-    <form action="#" method="POST" id="form1">
+    <form action="feedback.html" method="get" id="form1">
         <table id="feedback">
             <tr>
                 <td><label for="person">Choose person </label></td>
@@ -56,10 +56,16 @@
                         <td> <input type="password" placeholder="confirm password" required></td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="submit" value="Sign Up"></td>
+                        <td colspan="2" align="center"><input type="submit" value="Sign Up" onclick="validate()"></td>
                     </tr>
         </table>
     </form>
+    <script>
+        function validate() {
+
+            alert("Registered successfully");
+        }
+    </script>
 </body>
 
 </html>
