@@ -3,7 +3,7 @@
 
 <head>
     <link type="text/css" rel="stylesheet" href="mystyle.css">
-    <script src="js/login.js"></script>
+
     <title>login</title>
 
 </head>
@@ -40,22 +40,22 @@
                 </tr>
                 <tr>
                     <td><input type="submit" value="submit" id="submit" onclick="validate()"></td>
-                    <script>
-                        var attempt = 3; // Variable to count number of attempts.
-                        // Below function Executes on click of login button.
-                        function validate() {
-                            var username = document.getElementById("username").value;
-                            var password = document.getElementById("password").value;
-                            if (username == "admin" && password == "admin") {
-                                alert("Login successfully");
-                                window.location = "feedback.html"; // Redirecting to other page.
-                                return false;
-                            }
-                        }
-                    </script>
+
                     <td><a href="signup.html">Register</a></td>
                 </tr>
     </form>
+    <p>Enter Usenmae = admin and Password = admin</p>
+    <script>
+        function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username == "admin" && password == "admin") {
+                alert("Login successfully");
+                window.location = "feedback.html"; // Redirecting to other page.
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>
