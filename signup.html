@@ -3,63 +3,112 @@
 
 <head>
     <title>Register</title>
-    <link type="text/css" rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="topnav">
-            <a class="active" href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Register</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="logout.html">Logout</a>
-        </div>
-    </header>
-    <h1>Register</h1>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <a class="navbar-brand" href="index.html">
+                <img src="feedback_logo.jpg" alt="logo" style="width:40px;">
+            </a>
 
-    <form action="feedback.html" method="get" id="form1">
-        <table id="feedback">
-            <tr>
-                <td><label for="person">Choose person </label></td>
-                <td><select name="person" id="person">
-                        <option value="admin">Admin</option>
-                        <option value="faculty">Faculty</option>
-                        <option value="student">Student</option>
-                    </select></td>
-                <tr>
-                    <tr>
-                        <td>Name </td>
-                        <td><input type="text" placeholder="first last middle" required autofocus></td>
-                    </tr>
-                    <tr>
-                        <td>Email </td>
-                        <td><input type="email" placeholder="Email" required></td>
-                    </tr>
-                    <tr>
-                        <td>Birth date </td>
-                        <td><input type="date" name="bday"></td>
-                    </tr>
-                    <tr>
-                        <td>Username </td>
-                        <td> <input type="username" placeholder="Username" required></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td> <input type="password" placeholder="Password" required></td>
-                    </tr>
-                    <tr>
-                        <td>Confirm Password </td>
-                        <td> <input type="password" placeholder="confirm password" required></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center"><input type="submit" value="Sign Up" onclick="validate()"></td>
-                    </tr>
-        </table>
-    </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="feedback.html">Feedback</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container"><br>
+        <h2>Register</h2>
+
+        <form action="/feedback.html" class="needs-validation" validate method="GET" id="form1">
+            <div class="form-group">
+                <br><br>
+                <label for="person">Choose person:</label>
+
+                <select class="form-control" id="sel1" name="sellist1">
+                    <option value="admin">Admin</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="student">Student</option>
+                </select>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="name">Name : </label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="uname">E-mail : </label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="bdate">Birth date : </label>
+                <input type="date" class="form-control" id="bdate" placeholder="Enter birth date" name="bdate" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="uname">Username : </label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password : </label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="cpwd">Confirm Password : </label>
+                <input type="cpassword" class="form-control" id="cpwd" placeholder="Confirm password" name="cpswd" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+        </form>
+
+    </div>
+
+
+
+
+
     <script>
         function validate() {
 

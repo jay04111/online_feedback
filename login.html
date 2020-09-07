@@ -2,49 +2,114 @@
 <html>
 
 <head>
-    <link type="text/css" rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
 
     <title>login</title>
 
 </head>
 
 <body>
-    <header>
-        <div class="topnav">
-            <a class="active" href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Register</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="logout.html">Logout</a>
-        </div>
-    </header>
-    <h1>Login</h1>
-    <form action="feedback.html" method="get" id="form1">
-        <table id="feedback">
-            <tr>
-                <td><label for="person">Log in as  </label></td>
-                <td><select name="person" id="person">
-                        <option value="admin">Admin</option>
-                        <option value="faculty">Faculty</option>
-                        <option value="student">Student</option>
-                    </select></td>
-                <tr>
-                    <td> Username </td>
-                    <td> <input type="username" title="username" placeholder="Username" id="username" required autofocus></td>
-                </tr>
-                <tr>
-                    <td> Password </td>
-                    <td><input type="password" title="password" placeholder="at least 8 character " min="8" id="password" required></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="submit" id="submit" onclick="validate()"></td>
 
-                    <td><a href="signup.html">Register</a></td>
-                </tr>
-    </form>
-    <p>Enter Usenmae = admin and Password = admin</p>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <a class="navbar-brand" href="index.html">
+                <img src="feedback_logo.jpg" alt="logo" style="width:40px;">
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="feedback.html">Feedback</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container"><br>
+        <h2>Login</h2>
+        <img src="feedback2.jpg" class="float-right" alt="Paris" width="100%" height="380px">
+        <form action="/feedback.html" class="needs-validation" novalidate method="GET" id="form1">
+            <div class="form-group">
+                <br><br>
+                <label for="person">Login as:</label>
+
+                <select class="form-control" id="sel1" name="sellist1">
+                    <option value="admin">Admin</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="student">Student</option>
+                </select>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+        </form>
+
+    </div>
+
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+
+
+
+
+
+
     <script>
         function validate() {
             var username = document.getElementById("username").value;

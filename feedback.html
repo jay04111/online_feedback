@@ -3,138 +3,167 @@
 
 <head>
     <title>Feedback</title>
-    <link type="text/css" rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
     <script>
         function feedback_response() {
 
-            document.getElementsByClassName('prof_name').innerHTML = "professor name :" + document.feedback_from.feedback.sub.sub_name.value;
+            document.getElementsByClassName('prof_name').innerHTML = "professor name :" + document.feedback_from.feedback.sub.value;
 
         }
     </script>
+
 </head>
 
 <body>
-    <header>
-        <div class="topnav">
-            <a class="active" href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Register</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About</a>
-            <a href="logout.html">Logout</a>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <a class="navbar-brand" href="index.html">
+                <img src="feedback_logo.jpg" alt="logo" style="width:40px;">
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="feedback.html">Feedback</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+            </ul>
         </div>
-    </header><br>
-    <form name="feedback_from">
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        <table border="2px" align="center" id="feedback">
 
-            <thead>
-                <tr>
-                    <th colspan="4">Feedback</th>
+    <div class="container"><br>
+        <form name="feedback_from" class="needs-validation" validate id="feedback_from">
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="2" align="center">Prof. Name:</td>
-                    <td colspan="2" align="center"><input type="text" name="name" id="prof_name" /></td>
+            <table class="table" style="padding-left: 20px;">
 
-                </tr>
-
-                <tr>
-                    <td colspan="2" align="center">Subject Name:</td>
-                    <td colspan="2" align="center"><input type="text" name="sub" id="sub_name" /></td>
-
-                </tr>
-                <tr>
-                    <td></td>
-                    <td align="center">Good</td>
-                    <td align="center">Fair</td>
-                    <td align="center">Poor</td>
-                </tr>
-                <tr>
-
-                    <td>
-                        Teaching skill
-                    </td>
-                    <td align="center"><input type="radio" name="Teaching skill" value="Good"></td>
-                    <td align="center"><input type="radio" name="Teaching skill" value="Fair"></td>
-                    <td align="center"><input type="radio" name="Teaching skill" value="Poor"></td>
-                </tr>
-                <tr>
-
-                    <td>
-                        Sincerity
-                    </td>
-                    </td>
-                    <td align="center"><input type="radio" name="Sincerity" value="Good"></td>
-                    <td align="center"><input type="radio" name="Sincerity" value="Fair"></td>
-                    <td align="center"><input type="radio" name="Sincerity" value="Poor"></td>
-                </tr>
-                <tr>
-
-                    <td>
-                        Interaction
-                    </td>
-                    </td>
-                    <td align="center"><input type="radio" name="Interaction" value="Good"></td>
-                    <td align="center"><input type="radio" name="Interaction" value="Fair"></td>
-                    <td align="center"><input type="radio" name="Interaction" value="Poor"></td>
-                </tr>
-                <tr>
-
-                    <td>
-                        class maintenance
-                    </td>
-                    </td>
-                    <td align="center"><input type="radio" name="class maintenance" value="Good"></td>
-                    <td align="center"><input type="radio" name="class maintenance" value="Fair"></td>
-                    <td align="center"><input type="radio" name="class maintenance" value="Poor"></td>
-                </tr>
-                <tr>
-
-                    <td>
-                        subject involement
-                    </td>
-                    </td>
-                    <td align="center"><input type="radio" name="subject involement" value="Good"></td>
-                    <td align="center"><input type="radio" name="subject involement" value="Fair"></td>
-                    <td align="center"><input type="radio" name="subject involement" value="Poor"></td>
-                </tr>
-                <tr>
-
-                    <td>
-                        knowledge
-                    </td>
-                    </td>
-                    <td align="center"><input type="radio" name="knowledge" value="Good"></td>
-                    <td align="center"><input type="radio" name="knowledge" value="Fair"></td>
-                    <td align="center"><input type="radio" name="knowledge" value="Poor"></td>
-                </tr>
-
-                <thead>
+                <thead class="thead-dark">
                     <tr>
-                        <th colspan="4" align="center"><input type="submit" value="submit" id=btn_i onclick='feedback_response(); return false'></th>
+                        <th colspan="4" style="text-align: center;">Feedback</th>
 
                     </tr>
                 </thead>
-            </tbody>
-        </table>
-    </form>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td style="padding-left: 30px;">Prof. Name:</td>
+                        <td><input type="text" name="name" id="prof_name" /></td>
 
-    <div class="feedback">
-        <p class="prof_name"></p><br>
-        <p class="subject"></p><br><br>
-        <p class="teaching_skill"></p><br>
-        <p class="sincerity"></p><br>
-        <p class="interaction"></p><br>
-        <p class="class_maintenance"></p><br>
-        <p class="subject_involement"></p><br>
-        <p class="knowledge"></p><br>
+                        <td>Subject Name:</td>
+                        <td><input type="text" name="sub" id="sub_name" /></td>
+
+                    </tr>
+                    <thead class="thead-dark">
+                        <td></td>
+                        <td align="center">Good</td>
+                        <td align="center">Fair</td>
+                        <td align="center">Poor</td>
+                    </thead>
+
+                    <tr class="table-secondary">
+
+                        <td>
+                            Teaching skill
+                        </td>
+                        <td align="center"><input type="radio" name="Teaching skill" value="Good"></td>
+                        <td align="center"><input type="radio" name="Teaching skill" value="Fair"></td>
+                        <td align="center"><input type="radio" name="Teaching skill" value="Poor"></td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            Sincerity
+                        </td>
+                        </td>
+                        <td align="center"><input type="radio" name="Sincerity" value="Good"></td>
+                        <td align="center"><input type="radio" name="Sincerity" value="Fair"></td>
+                        <td align="center"><input type="radio" name="Sincerity" value="Poor"></td>
+                    </tr>
+                    <tr class="table-secondary">
+
+                        <td>
+                            Interaction
+                        </td>
+                        </td>
+                        <td align="center"><input type="radio" name="Interaction" value="Good"></td>
+                        <td align="center"><input type="radio" name="Interaction" value="Fair"></td>
+                        <td align="center"><input type="radio" name="Interaction" value="Poor"></td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            class maintenance
+                        </td>
+                        </td>
+                        <td align="center"><input type="radio" name="class maintenance" value="Good"></td>
+                        <td align="center"><input type="radio" name="class maintenance" value="Fair"></td>
+                        <td align="center"><input type="radio" name="class maintenance" value="Poor"></td>
+                    </tr>
+                    <tr class="table-secondary">
+
+                        <td>
+                            subject involement
+                        </td>
+                        </td>
+                        <td align="center"><input type="radio" name="subject involement" value="Good"></td>
+                        <td align="center"><input type="radio" name="subject involement" value="Fair"></td>
+                        <td align="center"><input type="radio" name="subject involement" value="Poor"></td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            knowledge
+                        </td>
+                        </td>
+                        <td align="center"><input type="radio" name="knowledge" value="Good"></td>
+                        <td align="center"><input type="radio" name="knowledge" value="Fair"></td>
+                        <td align="center"><input type="radio" name="knowledge" value="Poor"></td>
+                    </tr>
+
+                    <thead>
+                        <tr>
+                            <td align="center" colspan="4"><input type="submit" class="btn btn-primary" value="submit" id=btn_i onclick='feedback_response(); return false'></td>
+
+                        </tr>
+                    </thead>
+                </tbody>
+            </table>
+        </form>
+
+        <div class="feedback">
+            <p class="prof_name"></p><br>
+            <p class="subject"></p><br><br>
+            <p class="teaching_skill"></p><br>
+            <p class="sincerity"></p><br>
+            <p class="interaction"></p><br>
+            <p class="class_maintenance"></p><br>
+            <p class="subject_involement"></p><br>
+            <p class="knowledge"></p><br>
+        </div>
+
     </div>
-
-
 </body>
 
 </html>

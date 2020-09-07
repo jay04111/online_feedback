@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>admin</title>
-        <style>
-            body {
-              background-image: url('feedback.jpg');
-              width: 50;
-              height: 50;
-            }
-        </style>
-    </head>
 
-    
-    <body>
-        <img src="admin.jpg" alt="your profile" width="100" height="100"><br>
-            <a href="students">see students</a><br>
-            <a href="faculty">see faculties</a><br>
-            <a href="feedback.html">see feedback</a>
+<head>
+    <title>admin</title>
+    <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('feedback.jpg');
+            width: 50;
+            height: 50;
+        }
+    </style>
+</head>
 
-    </body>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <a class="navbar-brand" href="index.html">
+                <img src="feedback_logo.jpg" alt="logo" style="width:40px;">
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="feedback.html">Feedback</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <img src="admin.jpg" alt="your profile" width="100" height="100"><br>
+    <a href="students">see students</a><br>
+    <a href="faculty">see faculties</a><br>
+    <a href="feedback.html">see feedback</a>
+
+</body>
+
 </html>
