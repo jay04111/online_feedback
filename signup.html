@@ -3,6 +3,9 @@
 
 <head>
     <title>Register</title>
+    <link rel="icon" href="feedback_icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
@@ -10,9 +13,7 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <a class="navbar-brand" href="index.html">
-                <img src="feedback_logo.jpg" alt="logo" style="width:40px;">
-            </a>
+            <a class="active" href="index.html"><i class="fa fa-home"></i></a>
 
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -50,7 +51,7 @@
     <div class="container"><br>
         <h2>Register</h2>
 
-        <form action="/feedback.html" class="needs-validation" validate method="GET" id="form1">
+        <form action="/feedback.html" class="needs-validation" validate method="GET" id="signup">
             <div class="form-group">
                 <br><br>
                 <label for="person">Choose person:</label>
@@ -60,61 +61,164 @@
                     <option value="faculty">Faculty</option>
                     <option value="student">Student</option>
                 </select>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+
             </div>
             <div class="form-group">
                 <label for="name">Name : </label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <span style="color: red;" id="name_err_msg"></span>
+
             </div>
             <div class="form-group">
                 <label for="uname">E-mail : </label>
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <span style="color: red;" id="email_err_msg"></span>
+
             </div>
             <div class="form-group">
                 <label for="bdate">Birth date : </label>
                 <input type="date" class="form-control" id="bdate" placeholder="Enter birth date" name="bdate" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+
             </div>
             <div class="form-group">
                 <label for="uname">Username : </label>
                 <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <span style="color: red;" id="uname_err_msg"></span>
+
             </div>
             <div class="form-group">
                 <label for="pwd">Password : </label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd" required>
+                <span style="color: red;" id="password_err_msg"></span>
+
             </div>
             <div class="form-group">
                 <label for="cpwd">Confirm Password : </label>
-                <input type="cpassword" class="form-control" id="cpwd" placeholder="Confirm password" name="cpswd" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
+                <input type="password" class="form-control" id="cpassword" placeholder="Confirm password" name="cpswd" required>
+                <span style="color: red;" id="cpassword_err_msg"></span>
+
             </div>
 
-            <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <script>
+                $(function() {
+                    $("#name_err_msg").hide();
+                    $("#email_err_msg").hide();
+                    $("#uname_err_msg").hide();
+                    $("#password_err_msg").hide();
+                    $("#cpassword_err_msg").hide();
+
+                    var err_name = false;
+                    var err_email = false;
+                    var err_uname = false;
+                    var err_password = false;
+                    var err_cpassword = false;
+
+                    $("#name").focusout(function() {
+                        check_name();
+                    });
+
+                    $("#email").focusout(function() {
+                        check_email();
+                    });
+
+                    $("#uname").focusout(function() {
+                        check_uname();
+                    });
+
+                    $("#password").focusout(function() {
+                        check_password();
+                    });
+
+                    $("#cpassword").focusout(function() {
+                        check_cpassword();
+                    });
+
+                    function check_name() {
+                        var name_len = $("#name").val().length;
+                        if (name_len < 1) {
+                            $("#name_err_msg").html("Should be at least 1 characters");
+                            $("#name_err_msg").show();
+                            err_name = true;
+                        } else {
+                            $("#name_err_msg").hide();
+                        }
+                    }
+
+                    function check_uname() {
+                        var name_len = $("#uname").val().length;
+                        if (name_len < 5 || name_len > 20) {
+                            $("#uname_err_msg").html("Should be between 5-20 characters");
+                            $("#uname_err_msg").show();
+                            err_uname = true;
+                        } else {
+                            $("#uname_err_msg").hide();
+                        }
+                    }
+
+
+                    function check_email() {
+                        var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+                        if (pattern.test($("#email").val())) {
+                            $("#email_err_msg").hide();
+                        } else {
+                            $("#email_err_msg").html("Invalid email address");
+                            $("#email_err_msg").show();
+                            err_email = true;
+                        }
+                    }
+
+                    function check_password() {
+                        var password_len = $("#password").val().length;
+                        if (password_len < 8) {
+                            $("#password_err_msg").html("at least 8 characters");
+                            $("#password_err_msg").show();
+                            err_password = true;
+                        } else {
+                            $("#password_err_msg").hide();
+                        }
+                    }
+
+                    function check_cpassword() {
+                        var password = $("#password").val();
+                        var cpassword = $("#cpassword").val();
+                        if (password != cpassword) {
+                            $("#cpassword_err_msg").html("password don't match");
+                            $("#cpassword_err_msg").show();
+                            err_cpassword = true;
+                        } else {
+                            $("#cpassword_err_msg").hide();
+                        }
+                    }
+
+                    $("#signup").submit(function() {
+                        err_name = false;
+                        err_email = false;
+                        err_password = false;
+                        err_cpassword = false;
+                        err_uname = false;
+
+                        check_name();
+                        check_email()
+                        check_uname();
+                        check_password();
+                        check_cpassword();
+
+                        if (err_name == false && err_email == false && err_uname == false && err_password == false && err_cpassword == false) {
+                            alert("Registered successfully");
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    });
+
+                });
+            </script>
         </form>
 
     </div>
 
 
-
-
-
-    <script>
-        function validate() {
-
-            alert("Registered successfully");
-        }
-    </script>
 </body>
 
 </html>
